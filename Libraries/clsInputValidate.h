@@ -72,7 +72,7 @@ public:
     }
 
     // ---------------- DATE VALIDATION ----------------
-    static bool IsDateBetween(clsDate Date, clsDate DateFrom, clsDate DateTo)
+    static bool IsDateBetween(const clsDate& Date, const clsDate& DateFrom, const clsDate& DateTo)
     {
         
         if (!clsDate::IsDate1BeforeDate2(DateFrom, DateTo))
@@ -91,7 +91,7 @@ public:
         return AfterOrEqualFrom && BeforeOrEqualTo;
     }
 
-    static bool IsValidDate(clsDate Date)
+    static bool IsValidDate(const clsDate& Date)
     {
         return clsDate::IsValidDate(Date);
     }

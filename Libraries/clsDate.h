@@ -362,16 +362,19 @@ public:
     }
 
     // Add / Subtract days
-    static clsDate AddOneDay(clsDate Date)
+    static clsDate AddOneDay(const clsDate &Date)
     {
-        if (Date._Day == NumberOfDaysInAMonth(Date._Month, Date._Year))
+        clsDate temp = Date;
+
+        if (temp._Day == NumberOfDaysInAMonth(temp._Month, temp._Year))
         {
-            Date._Day = 1;
-            if (Date._Month == 12) { Date._Month = 1; Date._Year++; }
-            else Date._Month++;
+            temp._Day = 1;
+            if (temp._Month == 12) { temp._Month = 1; temp._Year++; }
+            else temp._Month++;
         }
-        else Date._Day++;
-        return Date;
+        else temp._Day++;
+
+        return temp;
     }
 
     void AddOneDay() 

@@ -7,6 +7,10 @@
 
 int main()
 {
+    clsDate Date(77, 22, 2000);
+    std::cout << clsInputValidate<clsDate>::IsValidDate(Date);
+    
+
 
     //------------------ clsInputValidate Class ------------------
     std::cout << "_____________clsInputValidate Library_____________ \n";
